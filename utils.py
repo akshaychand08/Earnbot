@@ -1,18 +1,28 @@
 import logging
+from urllib.parse import quote_plus
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM
-from imdb import IMDb
+from info import SHORTLINK_URL, SHORTLINK_URL2, SHORTLINK_API, SHORTLINK_API2, REPLACE_WORDS, VERIFY_1_SHORTENERS, SHORT_URL, SHORTENER_API, SHORTENER_API2, SHORTENER_WEBSITE, SHORTENER_WEBSITE2, AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM, SHORTLINK_URL, SHORTLINK_API, IS_SHORTLINK, LOG_CHANNEL, TUTORIAL, GRP_LNK, CHNL_LNK, CUSTOM_FILE_CAPTION, SECOND_SHORTLINK_URL, SECOND_SHORTLINK_API
+from imdb import Cinemagoer 
 import asyncio
-from pyrogram.types import Message, InlineKeyboardButton
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from pyrogram import enums
-from typing import Union
+from typing import Union, Any
+from Script import script
+import pytz
+import random 
 import re
 import os
-from datetime import datetime
+from datetime import datetime, date
+import string
 from typing import List
 from database.users_chats_db import db
 from bs4 import BeautifulSoup
 import requests
+import aiohttp
+from shortzy import Shortzy
+import http.client
+import json
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -21,9 +31,11 @@ BTN_URL_REGEX = re.compile(
     r"(\[([^\[]+?)\]\((buttonurl|buttonalert):(?:/{0,2})(.+?)(:same)?\))"
 )
 
-imdb = IMDb() 
-
+imdb = Cinemagoer() 
+TOKENS = {}
+VERIFIED = {}
 BANNED = {}
+SECOND_SHORTENER = {}
 SMART_OPEN = '“'
 SMART_CLOSE = '”'
 START_CHAR = ('\'', '"', SMART_OPEN)
@@ -38,17 +50,21 @@ class temp(object):
     MELCOW = {}
     U_NAME = None
     B_NAME = None
+    GETALL = {}
+    SHORT = {}
     SETTINGS = {}
+    GET_ID = {}
 
-async def is_subscribed(bot, query):
+async def is_subscribed(bot, query, grp_id):
     try:
-        user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
+        settings = await get_settings(int(grp_id))
+        user = await bot.get_chat_member(settings['fsub'], query.from_user.id)
     except UserNotParticipant:
         pass
     except Exception as e:
         logger.exception(e)
     else:
-        if user.status != 'kicked':
+        if user.status != enums.ChatMemberStatus.BANNED:
             return True
 
     return False
@@ -154,20 +170,20 @@ async def broadcast_messages(user_id, message):
     except Exception as e:
         return False, "Error"
 
-async def search_gagala(text):
-    usr_agent = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
-        'Chrome/61.0.3163.100 Safari/537.36'
-        }
-    text = text.replace(" ", '+')
-    url = f'https://www.google.com/search?q={text}'
-    response = requests.get(url, headers=usr_agent)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, 'html.parser')
-    titles = soup.find_all( 'h3' )
-    return [title.getText() for title in titles]
-
-
+async def broadcast_messages_group(chat_id, message):
+    try:
+        kd = await message.copy(chat_id=chat_id)
+        try:
+            await kd.pin()
+        except:
+            pass
+        return True, "Success"
+    except FloodWait as e:
+        await asyncio.sleep(e.x)
+        return await broadcast_messages_group(chat_id, message)
+    except Exception as e:
+        return False, "Error"
+    
 async def get_settings(group_id):
     settings = temp.SETTINGS.get(group_id)
     if not settings:
@@ -295,6 +311,7 @@ def split_quotes(text: str) -> List:
         key = text[0] + text[0]
     return list(filter(None, [key, rest]))
 
+
 def parser(text, keyword):
     if "buttonalert" in text:
         text = (text.replace("\n", "\\n").replace("\t", "\\t"))
@@ -375,3 +392,89 @@ def humanbytes(size):
         size /= power
         n += 1
     return str(round(size, 2)) + " " + Dic_powerN[n] + 'B'
+
+async def get_shortlink(chat_id, link, second=False):
+    settings = await get_settings(chat_id) #fetching settings for group
+    if 'shortlink' in settings.keys():
+        URL = settings['shortlink']
+        API = settings['shortlink_api']
+    else:
+        URL = SHORTLINK_URL
+        API = SHORTLINK_API
+    if URL == "api.shareus.io":
+        url = f'https://{URL}/easy_api'
+        params = {
+            "key": API,
+            "link": link,
+        }
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
+                    data = await response.text()
+                    return data
+        except Exception as e:
+            logger.error(e)
+            return link
+    else:
+        shortzy = Shortzy(api_key=API, base_site=URL)
+        try:
+            link = await shortzy.convert(link)
+        except Exception as e:
+            link = await shortzy.get_quick_link(link)
+        return link        
+    
+async def get_tutorial(chat_id):
+    settings = await get_settings(chat_id) #fetching settings for group
+    if 'tutorial' in settings.keys():
+        TUTORIAL_URL = settings['tutorial']
+    else:
+        TUTORIAL_URL = TUTORIAL
+    return TUTORIAL_URL
+        
+
+async def get_vr_shortlink(chat_id, url, is_second_shortener=False):
+    if SHORT_URL:
+        if is_second_shortener:
+            settings = await get_settings(int(chat_id))
+            if 'shortlink2' in settings.keys():
+                api, site = settings['shortlink_api2'], settings['shortlink2']
+            else:
+                api, site = SHORTENER_API2, SHORTENER_WEBSITE2
+        else:
+            settings = await get_settings(int(chat_id))
+            if 'shortlink' in settings.keys():    
+                api, site = settings['shortlink_api'], settings['shortlink']
+            else:
+                api, site = SHORTENER_API, SHORTENER_WEBSITE
+
+        shortzy = Shortzy(api, site)
+        try:
+            url = await shortzy.convert(url)
+        except Exception as e:
+            url = await shortzy.get_quick_link(url)
+    return url
+
+
+async def replace_words(string):
+    prohibitedWords = REPLACE_WORDS
+    big_regex = re.compile(r'(\s?(' + '|'.join(map(re.escape, prohibitedWords)) + r')\b\s?)|(\s?\b(' + '|'.join(map(re.escape, prohibitedWords)) + r')\s?)')
+    formatted = big_regex.sub(lambda match: match.group().replace(match.group(2) or match.group(4), ""), string)
+    return formatted.replace("-"," ")
+
+
+def is_int(string):
+    try:
+        int(string)
+        return True
+    except ValueError:
+        return False
+
+
+async def is_bot_admin(c, channel_id):
+    if channel_id:
+        try:
+            await c.create_chat_invite_link(channel_id)
+            return True
+        except Exception as e:
+            return
+    return True
