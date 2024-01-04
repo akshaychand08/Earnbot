@@ -14,7 +14,7 @@ from pyrogram.types import *
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id, get_bad_files
 from database.users_chats_db import db
-from info import FSUBOFF, ALL_SHORT_LINK_OFF, AUTO_FFILTER, AUTO_DELETE, IMDB_TEMPLATE, VERIFY_LOG, IS_VERIFY, TUTORIAL_LINK_2, TUTORIAL_LINK_1, VERIFY_LOG, VERIFY_IMG, USERNAME, CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, IS_TUTORIAL, REQST_CHANNEL
+from info import FSUBOFF, PICS_1, ALL_SHORT_LINK_OFF, AUTO_FFILTER, AUTO_DELETE, IMDB_TEMPLATE, VERIFY_LOG, IS_VERIFY, TUTORIAL_LINK_2, TUTORIAL_LINK_1, VERIFY_LOG, VERIFY_IMG, USERNAME, CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, IS_TUTORIAL, REQST_CHANNEL
 from utils import is_int, is_bot_admin, get_vr_shortlink, get_settings, get_size, is_subscribed, save_group_settings, temp, get_shortlink, get_tutorial
 from database.connections_mdb import active_connection
 from shortzy import Shortzy 
@@ -58,8 +58,21 @@ async def start(client, message):
         return		
 	    
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        await message.reply("<b>ʏᴇs, ɪ ᴀᴍ ᴏɴʟɪɴᴇ 😁\nᴡʜʏ ʏᴏᴜ sᴛᴀʀᴛ ᴍᴇ 🥱</b>")
-        await asyncio.sleep(10)
+        buttons = [[
+                    InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                  ],[
+                    InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇs', url='https://t.me/arsOfficial10'),
+                    InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/iPapdiscussion')
+                  ],[
+                    InlineKeyboardButton('ʜᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help")
+                  ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        kd = await message.reply_photo(
+        photo=random.choice(PICS_1),
+        caption=script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+        await asyncio.sleep(25)
+        await kd.delete()
+        await message.delete()
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
