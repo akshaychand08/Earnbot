@@ -113,8 +113,8 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 #verify 
 
 #bot owner 
-SHORTENER_API = environ.get("SHORTENER_API", "31527d04f7d6957c11cba5b6c72e5a3f1101803b")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "link2paisa.com")
+SHORTENER_API = environ.get("SHORTENER_API", "9c65da040c06369120fe6487c3f72406c59047b7")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "earn2me.com")
 #SHORTENER_API2 = environ.get("SHORTENER_API2", "6ee7840bdaf0103a11214c62c8b0a5d05fe347c3")
 #SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "tnshort.net")
 SHORTENER_API2 = environ.get("SHORTENER_API2", None)
