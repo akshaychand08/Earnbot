@@ -57,8 +57,10 @@ VERIFY = bool(environ.get('VERIFY', True))
 IS_SHORTLINK = is_enabled(environ.get("IS_SHORTLINK", "False"), True)
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
 SHORTLINK_API = environ.get('SHORTLINK_API', '6ee7840bdaf0103a11214c62c8b0a5d05fe347c3')
-SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'mdiskshortner.link')
-SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', 'fc6297ad0ad340ec66c75ce9157e056176bd7a81')
+#SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'mdiskshortner.link')
+#SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', 'fc6297ad0ad340ec66c75ce9157e056176bd7a81')
+SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', None)
+SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', None)
 ALL_SHORT_LINK_OFF = is_enabled(environ.get("ALL_SHORT_LINK_OFF", "False"), False)
 
 
@@ -127,10 +129,13 @@ VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/42d79197597d7941
 VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1002072344938'))
 
 SHORTLINK_API = environ.get("SHORTLINK_API", "45e732fb38cf90573b60013be50146aa206c2902")
-SHORTLINK_API2 = environ.get("SHORTLINK_API2", "45e732fb38cf90573b60013be50146aa206c2902")
+#SHORTLINK_API2 = environ.get("SHORTLINK_API2", "45e732fb38cf90573b60013be50146aa206c2902")
+SHORTLINK_API2 = environ.get("SHORTLINK_API2", None)
 
 SHORTLINK_URL = environ.get("SHORTLINK_URL", "paisakamalo.in")
-SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", "paisakamalo.in")
+#SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", "paisakamalo.in")
+SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", None)
+
 
 
 
