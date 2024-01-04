@@ -96,8 +96,8 @@ PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
 #this vars for online streaming code
 
-#BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1001558291173")) 
-#GEN_URL = os.environ.get("DIRECT_GEN_URL", "http://filestreambot-21yk.onrender.com/") # https://example.com/
+BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1001558291173")) 
+GEN_URL = os.environ.get("DIRECT_GEN_URL", "http://filestreambot-21yk.onrender.com/") # https://example.com/
 
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
