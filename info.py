@@ -55,8 +55,8 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 # Others
 VERIFY = bool(environ.get('VERIFY', True))
 IS_SHORTLINK = is_enabled(environ.get("IS_SHORTLINK", "False"), True)
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
-SHORTLINK_API = environ.get('SHORTLINK_API', '6ee7840bdaf0103a11214c62c8b0a5d05fe347c3')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'link2paisa.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '31527d04f7d6957c11cba5b6c72e5a3f1101803b')
 #SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'mdiskshortner.link')
 #SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', 'fc6297ad0ad340ec66c75ce9157e056176bd7a81')
 SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', None)
@@ -64,12 +64,12 @@ SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', None)
 ALL_SHORT_LINK_OFF = is_enabled(environ.get("ALL_SHORT_LINK_OFF", "False"), False)
 
 
-MAX_B_TN = environ.get("MAX_B_TN", "10")
+MAX_B_TN = environ.get("MAX_B_TN", "6")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/iPapcornPrimeGroup')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/arsOfficial10')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/Elkin_FilesBot?start=ZmlsZV9CQUFEQlFBRG1Bb0FBamRCZ1ZkLXhXMXJmT2RGNEJZRQ')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/HoW_ToOpEn/42')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002072344938'))
@@ -96,8 +96,8 @@ PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
 #this vars for online streaming code
 
-BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1001558291173")) 
-GEN_URL = os.environ.get("DIRECT_GEN_URL", "http://filestreambot-21yk.onrender.com/") # https://example.com/
+#BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", "-1001558291173")) 
+#GEN_URL = os.environ.get("DIRECT_GEN_URL", "http://filestreambot-21yk.onrender.com/") # https://example.com/
 
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
@@ -112,29 +112,36 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 
 #verify 
 
-SHORTENER_API = environ.get("SHORTENER_API", "4b392f8eb6ad7113fbe589ae3b1e7cf0eac597b6")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "omegalinks.in")
+#bot owner 
+SHORTENER_API = environ.get("SHORTENER_API", "9c65da040c06369120fe6487c3f72406c59047b7")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "earn2me.com")
+#SHORTENER_API2 = environ.get("SHORTENER_API2", "6ee7840bdaf0103a11214c62c8b0a5d05fe347c3")
+#SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "tnshort.net")
+SHORTENER_API2 = environ.get("SHORTENER_API2", None)
+SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", None)
 
 
 SHORT_URL = is_enabled((environ.get('SHORT_URL', "True")), True)
 IS_VERIFY = bool(environ.get('IS_VERIFY', True))
 
 
-
-TUTORIAL_LINK_2 = os.environ.get('TUTORIAL_LINK_2', 'https://t.me/howtodownload91/46')
-TUTORIAL_LINK_1 = os.environ.get('TUTORIAL_LINK_1', 'https://t.me/howtodownload91/44')
+#bot user
+TUTORIAL_LINK_1 = os.environ.get('TUTORIAL_LINK_1', None)
+TUTORIAL_LINK_2 = os.environ.get('TUTORIAL_LINK_2', None)
+#TUTORIAL_LINK_1 = os.environ.get('TUTORIAL_LINK_1', 'https://t.me/howtodownload91/44')
 
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/42d79197597d79418d438.jpg")
-
 VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1002072344938'))
 
-SHORTLINK_API = environ.get("SHORTLINK_API", "45e732fb38cf90573b60013be50146aa206c2902")
-#SHORTLINK_API2 = environ.get("SHORTLINK_API2", "45e732fb38cf90573b60013be50146aa206c2902")
+SHORTLINK_API = environ.get("SHORTLINK_API", None)
 SHORTLINK_API2 = environ.get("SHORTLINK_API2", None)
-
-SHORTLINK_URL = environ.get("SHORTLINK_URL", "paisakamalo.in")
-#SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", "paisakamalo.in")
 SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", None)
+SHORTLINK_URL = environ.get("SHORTLINK_URL", None)
+
+#SHORTLINK_API = environ.get("SHORTLINK_API", "9c65da040c06369120fe6487c3f72406c59047b7")
+#SHORTLINK_API2 = environ.get("SHORTLINK_API2", "9c65da040c06369120fe6487c3f72406c59047b7")
+#SHORTLINK_URL = environ.get("SHORTLINK_URL", "earn2me.com")
+#SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", "earn2me.com")
 
 
 
@@ -145,13 +152,9 @@ VERIFY_1_SHORTENERS = environ.get("VERIFY_1_SHORTENERS", "")
 
 VERIFY_1_SHORTENERS = [(data.split(",")[0].strip(), data.split(",")[1].strip()) for data in VERIFY_1_SHORTENERS.splitlines()]
 
-SHORTENER_API2 = environ.get("SHORTENER_API2", "6ee7840bdaf0103a11214c62c8b0a5d05fe347c3")
-SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "tnshort.net")
-
-
 #add custom shorter
 
-VERIFY_1_SHORTENERS=[("f1027dd13186e6e4e47c6baf320d6bbc868e70a7", "onepagelink.in"), ("45e732fb38cf90573b60013be50146aa206c2902", "paisakamalo.in")]
+VERIFY_1_SHORTENERS=[("9c65da040c06369120fe6487c3f72406c59047b7", "earn2me.com")]
 
 
 #nremove wrong words
