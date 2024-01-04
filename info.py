@@ -133,15 +133,15 @@ TUTORIAL_LINK_2 = os.environ.get('TUTORIAL_LINK_2', None)
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/42d79197597d79418d438.jpg")
 VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1002072344938'))
 
-SHORTLINK_API = environ.get("SHORTLINK_API", None)
+#SHORTLINK_URL = environ.get("SHORTLINK_URL", None)
+#SHORTLINK_API = environ.get("SHORTLINK_API", None)
 SHORTLINK_API2 = environ.get("SHORTLINK_API2", None)
 SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", None)
-SHORTLINK_URL = environ.get("SHORTLINK_URL", None)
 
 #SHORTLINK_API = environ.get("SHORTLINK_API", "9c65da040c06369120fe6487c3f72406c59047b7")
-#SHORTLINK_API2 = environ.get("SHORTLINK_API2", "9c65da040c06369120fe6487c3f72406c59047b7")
 #SHORTLINK_URL = environ.get("SHORTLINK_URL", "earn2me.com")
-#SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", "earn2me.com")
+SHORTLINK_API2 = environ.get("SHORTLINK_API2", "9c65da040c06369120fe6487c3f72406c59047b7")
+SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", "earn2me.com")
 
 
 
