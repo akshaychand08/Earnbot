@@ -1149,7 +1149,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('EXTRA MODS', url='extra')
+            InlineKeyboardButton('EXTRA MODS', callback_data='extra')
             InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data='stats')
         ]]
         await client.edit_message_media(
