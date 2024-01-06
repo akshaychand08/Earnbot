@@ -1062,8 +1062,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "ern_mony":
         buttons = [[
-            InlineKeyboardButton('VERIFY', callback_data="ern_mony_v"),
-            InlineKeyboardButton('SHORTLINK', callback_data="ern_mony_s"),
+            InlineKeyboardButton('How To Set Shortner', callback_data="ern_mony_v")
+            ],[
+            InlineKeyboardButton('FSUB', callback_data="fsub"),
+            InlineKeyboardButton('CUSTOM CAPTION', callback_data="caption")
             ],[
             InlineKeyboardButton('BACK', callback_data='start')
         ]]
