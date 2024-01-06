@@ -1117,7 +1117,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "caption":
         buttons = [[
             InlineKeyboardButton('SUPPORT CHANNEL', url=USERNAME),
-            InlineKeyboardButton('Back', callback_data='help')
+            InlineKeyboardButton('Back', callback_data='ern_mony')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1133,7 +1133,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "fsub":
         buttons = [[
             InlineKeyboardButton('SUPPORT CHANNEL', url=USERNAME),
-            InlineKeyboardButton('Back', callback_data='help')
+            InlineKeyboardButton('Back', callback_data='ern_mony')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1149,7 +1149,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('SUPPORT CHANNEL', url='https://t.me/FoxyBotSupport')
+            InlineKeyboardButton('EXTRA MODS', url="extra")
+            InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data="stats")
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
