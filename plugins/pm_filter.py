@@ -1046,7 +1046,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "help":
         if query.from_user.id in ADMINS:
-            buttons = [[InlineKeyboardButton('EXTRA MODS', callback_data='extra'),InlineKeyboardButton('Back', callback_data='start'),]]          
+            buttons = [[InlineKeyboardButton('EXTRA MODS', callback_data='extra'),InlineKeyboardButton('Aᴅᴍɪɴ', callback_data='admin')]]          
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1250,8 +1250,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
-            InlineKeyboardButton('Aᴅᴍɪɴ', callback_data='admin')
+            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help') 
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
