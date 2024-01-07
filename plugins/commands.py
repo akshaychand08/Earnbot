@@ -571,7 +571,7 @@ async def set_shortlink(bot, message):
     try:
         num, url, api = str(content).split(" ")[1:]
     except:
-        return await sts.edit("<b>Hey, Use the correct format. \n\nExample:\n/set_shortlink 1 onepagelink.in gh3jdudxxxx\n\nHere the first parameter is the number which decides the input shortlink is primary or secondary. Give 1 for setting it as primary. Give 2 for setting it as secondary.\n\nThe second parameter is the url of the shortlink website.\n\nThe third parameter is the api for the shortlink.</b>")
+        return await sts.edit("<b>Hey, Use the correct format. \n\nExample:\n/set_shortlink 1 <a href=https://publicearn.com/ref/AkshayChand10>publicearn.com</a> 4b392f8eb6ad711be589ae36\n\nHere the first parameter is the number which decides the input shortlink is primary or secondary. Give 1 for setting it as primary. Give 2 for setting it as secondary.\n\nThe second parameter is the url of the shortlink website.\n\nThe third parameter is the api for the shortlink.</b>")
 
     try:
         shortzy = Shortzy(api_key=api, base_site=url)
@@ -579,9 +579,9 @@ async def set_shortlink(bot, message):
         await shortzy.convert(link)
     except:            
           btn = [[
-          InlineKeyboardButton('owner', url="https://t.me/sahid_malik")
+          InlineKeyboardButton('owner', url="https://t.me/AkshayChand08")
           ]]
-          delt=await sts.edit(f"𝗛𝗲𝘆 {message.from_user.mention}\n\n𝗬𝗼𝘂𝗿 𝘄𝗲𝗯𝘀𝗶𝘁𝗲 𝗮𝗻𝗱 𝗔𝗣𝗜 𝗶𝘀 𝘄𝗿𝗼𝗻𝗴 𝗼𝗿 𝘁𝗵𝗶𝘀 𝘄𝗲𝗯𝘀𝗶𝘁𝗲 𝗶𝘀 𝗱𝗼𝘄𝗻 𝗻𝗼𝘄 𝗽𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗲𝗰𝗸 𝗮𝗴𝗮𝗶𝗻 𝗮𝗻𝗱 𝗮𝗱𝗱...\n\n𝙖𝙣𝙙 𝙋𝙡𝙚𝙖𝙨𝙚 𝙙𝙤𝙣'𝙩 𝙪𝙨𝙚:   𝗵𝘁𝘁𝗽𝘀://.\n\n𝗮𝗱𝗱 𝘁𝗵𝗶𝘀 𝘁𝘆𝗽𝗲: <code>/set_shortlink 1 omegalinks.in 4b392f8eb6ad7113fbe589ae3b1e7cf0eac597b</code>\n\n𝗔𝗻𝘆 𝗶𝘀𝘀𝘂𝗲 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 𝗺𝘆 𝗼𝘄𝗻𝗲𝗿 👇", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))        
+          delt=await sts.edit(f"𝗛𝗲𝘆 {message.from_user.mention}\n\n𝗬𝗼𝘂𝗿 𝘄𝗲𝗯𝘀𝗶𝘁𝗲 𝗮𝗻𝗱 𝗔𝗣𝗜 𝗶𝘀 𝘄𝗿𝗼𝗻𝗴 𝗼𝗿 𝘁𝗵𝗶𝘀 𝘄𝗲𝗯𝘀𝗶𝘁𝗲 𝗶𝘀 𝗱𝗼𝘄𝗻 𝗻𝗼𝘄 𝗽𝗹𝗲𝗮𝘀𝗲 𝗰𝗵𝗲𝗰𝗸 𝗮𝗴𝗮𝗶𝗻 𝗮𝗻𝗱 𝗮𝗱𝗱...\n\n𝙖𝙣𝙙 𝙋𝙡𝙚𝙖𝙨𝙚 𝙙𝙤𝙣'𝙩 𝙪𝙨𝙚:   𝗵𝘁𝘁𝗽𝘀://.\n\n𝗮𝗱𝗱 𝘁𝗵𝗶𝘀 𝘁𝘆𝗽𝗲: <code>/set_shortlink 1 <a href=https://publicearn.com/ref/AkshayChand10>publicearn.com</a> 4b392f8eb6ad711be589ae36\n\n𝗔𝗻𝘆 𝗶𝘀𝘀𝘂𝗲 𝗰𝗼𝗻𝘁𝗮𝗰𝘁 𝗺𝘆 𝗼𝘄𝗻𝗲𝗿 👇", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(btn))        
           async def del_func():
               await asyncio.sleep(30)
               await delt.delete()
@@ -597,7 +597,7 @@ async def set_shortlink(bot, message):
     elif int(num) == 2:
         await save_group_settings(grp_id, 'shortlink2', url)
         await save_group_settings(grp_id, 'shortlink_api2', api)  
-        return await sts.edit(f"Successfully set as secondary shortner.\n\nCurrent Status:\n\nSecondary URL: {settings['shortlink2']}\nSecondary API: {settings['shortlink_api2']}\nPrimary URL: {settings['shortlink']}\nPrimary API: {settings['shortlink_api']}") 
+        return await sts.edit(f"Successfully set as secondary shortner Only Verify.\n\nCurrent Status:\n\nSecondary URL: {settings['shortlink2']}\nSecondary API: {settings['shortlink_api2']}\nPrimary URL: {settings['shortlink']}\nPrimary API: {settings['shortlink_api']}") 
     else:
         return await sts.edit("Give valid number as the first parameter. Eg: 1 or 2")
 
