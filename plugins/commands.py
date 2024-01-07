@@ -790,3 +790,45 @@ async def get_details(client, message):
         InlineKeyboardButton(text="Close", callback_data="close_data")
     ]]
     await message.reply(script.CUSTOM_DETAILS.format(un, title, u1, a1, t1, u2, a2, t2, fs, it, fc), reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
+
+
+@Client.on_message(filters.command("verify2") & filters.incoming)
+async def verify2(c: Client, m):
+    userid = m.from_user.id if m.from_user else None
+    if not userid:
+        return await m.reply("You are anonymous admin")
+    chat_type = m.chat.type
+    if chat_type == enums.ChatType.PRIVATE:
+        grpid = await active_connection(str(userid))
+        if grpid is not None:
+            grp_id = grpid
+            try:
+                chat = await client.get_chat(grpid)
+                title = chat.title
+            except:
+                await m.reply_text("Make sure I'm present in your group!!", quote=True)
+                return
+        else:
+            await m.reply_text("I'm not connected to any groups!", quote=True)
+            return
+
+    elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        grp_id = m.chat.id
+        title = m.chat.title
+    else:
+        return
+    grp_id = m.chat.id
+    st = await c.get_chat_member(grp_id, userid)
+    if st.status not in [
+        enums.ChatMemberStatus.ADMINISTRATOR,
+        enums.ChatMemberStatus.OWNER,
+    ]:
+        return 
+    if m.command[1] in ["True", "False"]:
+        contact = m.command[1] == "True"
+        await db.update_group(grp_id, {"verify2": contact})
+        text = "Updated Successfully"
+
+    await m.reply_text(text)
+
+
