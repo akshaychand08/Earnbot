@@ -188,7 +188,7 @@ async def start(client, message):
     else:
         if not settings['is_shortlink']:
             user_verified = await db.is_user_verified(user_id)
-            is_second_shortener = await db.use_second_shortener(user_id)
+            is_second_shortener = await db.use_second_shortener(user_id, grp_id)
             ist_timezone = pytz.timezone('Asia/Kolkata')
             how_to_download_link = TUTORIAL_LINK2 if is_second_shortener else TUTORIAL_LINK1
             if not user_verified or is_second_shortener:
