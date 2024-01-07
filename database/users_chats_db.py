@@ -183,6 +183,26 @@ class Database:
             print(f"Error updating document: {e}")
             return False
 
+
+    async def get_grp_info(self, group_id: int):
+        g = await self.grp.find_one({'id': group_id})
+        if not g:
+            await self.add_chat(group_id, "Custom Group")
+            
+        return await self.grp.find_one({"id": group_id}) or {}
+
+    async def get_group_info(self, group_id):
+        return await self.get_grp_info(group_id)
+
+    async def update_update(self, group_id, value):
+        g = await self.grp.find_one({'id': group_id})
+        if not g:
+            await self.add_chat(group_id, "Custom Group")
+
+        await self.grp.update_one({'id': group_id}, {'$set': value}, upsert=True)
+    
+
+    
     async def get_expired(self, current_time):
         expired_users = []
         if data := self.users.find({"expiry_time": {"$lt": current_time}}):
@@ -294,5 +314,6 @@ class Database:
         myquery = {"user_id": user_id, "hash": hash}
         newvalues = { "$set": value }
         return await self.verify_id.update_one(myquery, newvalues)
+
 
 db = Database(DATABASE_URI, DATABASE_NAME)
