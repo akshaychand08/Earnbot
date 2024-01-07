@@ -593,7 +593,7 @@ async def set_shortlink(bot, message):
     if int(num) == 1:
         await save_group_settings(grp_id, 'shortlink', url)
         await save_group_settings(grp_id, 'shortlink_api', api)    
-        return await sts.edit(f"Successfully set as primary shortner.\n\nCurrent Status:\n\nPrimary Shortner URL: {settings['shortlink']}\n\nPrimary API: {settings['shortlink_api']}\n\nSecondary URL: {settings['shortlink2']}\n\nSecondary API: {settings['shortlink_api2']}")
+        return await sts.edit(f"Successfully set as primary shortner.\n\nCurrent Status:\n\nPrimary Shortner URL: {settings['shortlink']}\n\nPrimary API: {settings['shortlink_api']}")
     elif int(num) == 2:
         await save_group_settings(grp_id, 'shortlink2', url)
         await save_group_settings(grp_id, 'shortlink_api2', api)  
