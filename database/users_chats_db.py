@@ -28,7 +28,8 @@ class Database:
     def new_group(self, id, title):
         return dict(
             id = id,
-            title = title,
+            title = title, 
+            verify2 = True,
             chat_status=dict(
                 is_disabled=False,
                 reason="",
@@ -194,7 +195,7 @@ class Database:
     async def get_group_info(self, group_id):
         return await self.get_grp_info(group_id)
 
-    async def update_update(self, group_id, value):
+    async def update_group(self, group_id, value):
         g = await self.grp.find_one({'id': group_id})
         if not g:
             await self.add_chat(group_id, "Custom Group")
@@ -277,31 +278,36 @@ class Database:
         total_seconds = time_diff.total_seconds()
         return total_seconds <= seconds_since_midnight
 
-    async def use_second_shortener(self, user_id):
-        user = await self.get_notcopy_user(user_id)
-        if not user.get("second_time_verified"):
-            ist_timezone = pytz.timezone('Asia/Kolkata')
-            await self.update_notcopy_user(user_id, {"second_time_verified":datetime.datetime(2019, 5, 17, 0, 0, 0, tzinfo=ist_timezone)})
+    async def use_second_shortener(self, user_id, grp_id): 
+        group = await self.get_group_info(int(grp_id))
+        status = group.get('verify2')
+        if status==True:        
             user = await self.get_notcopy_user(user_id)
-
-        if await self.is_user_verified(user_id):
-
-            try:
-                pastDate = user["last_verified"]
-            except Exception:
+            if not user.get("second_time_verified"):
+                ist_timezone = pytz.timezone('Asia/Kolkata')
+                await self.update_notcopy_user(user_id, {"second_time_verified":datetime.datetime(2019, 5, 17, 0, 0, 0, tzinfo=ist_timezone)})
                 user = await self.get_notcopy_user(user_id)
-                pastDate = user["last_verified"]
 
-            ist_timezone = pytz.timezone('Asia/Kolkata')
-            pastDate = pastDate.astimezone(ist_timezone)
-            current_time = datetime.datetime.now(tz=ist_timezone)
-            time_difference = current_time - pastDate
-            if time_difference > datetime.timedelta(seconds=3600):
-                pastDate = user["last_verified"].astimezone(ist_timezone)
-                second_time = user["second_time_verified"].astimezone(ist_timezone)
-                return second_time < pastDate
+            if await self.is_user_verified(user_id):
 
-        return False
+                try:
+                    pastDate = user["last_verified"]
+                except Exception:
+                    user = await self.get_notcopy_user(user_id)
+                    pastDate = user["last_verified"]
+
+                ist_timezone = pytz.timezone('Asia/Kolkata')
+                pastDate = pastDate.astimezone(ist_timezone)
+                current_time = datetime.datetime.now(tz=ist_timezone)
+                time_difference = current_time - pastDate
+                if time_difference > datetime.timedelta(seconds=3600):
+                    pastDate = user["last_verified"].astimezone(ist_timezone)
+                    second_time = user["second_time_verified"].astimezone(ist_timezone)
+                    return second_time < pastDate
+
+            return False 
+        else:
+            return False 
 
     async def create_verify_id(self, user_id: int, hash):
         res = {"user_id": user_id, "hash":hash, "verified":False}
