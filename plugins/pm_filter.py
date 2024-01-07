@@ -906,7 +906,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
             reply_markup = InlineKeyboardMarkup(buttons)
             await client.send_message(
-         buttons = [
+            buttons = [
                 [
                     InlineKeyboardButton('ʀᴇsᴜʟᴛ ᴘᴀɢᴇ ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}'),
