@@ -597,7 +597,7 @@ async def set_shortlink(bot, message):
     elif int(num) == 2:
         await save_group_settings(grp_id, 'shortlink2', url)
         await save_group_settings(grp_id, 'shortlink_api2', api)  
-        return await sts.edit(f"Successfully set as secondary shortner Only Verify.\n\nCurrent Status:\n\nSecondary URL: {settings['shortlink2']}\nSecondary API: {settings['shortlink_api2']}\nPrimary URL: {settings['shortlink']}\nPrimary API: {settings['shortlink_api']}") 
+        return await sts.edit(f"Successfully set as secondary shortner Only Verify.\n\nCurrent Status Verify Mode:\n\nSecondary URL: {settings['shortlink2']}\nSecondary API: {settings['shortlink_api2']}\nPrimary URL: {settings['shortlink']}\nPrimary API: {settings['shortlink_api']}") 
     else:
         return await sts.edit("Give valid number as the first parameter. Eg: 1 or 2")
 
@@ -621,10 +621,10 @@ async def set_tutorial(bot, message):
     settings = await get_settings(int(grp_id))
     if int(num) == 1:
         await save_group_settings(grp_id, 'tutorial', tutorial)        
-        return await message.reply_text(f"Successfully set as secondary tutorial.\n\nCurrent Status:\nPrimary tutorial: {settings['tutorial']}\nSecondary tutorial: {settings['tutorial2']}") 
+        return await message.reply_text(f"Successfully set as secondary tutorial.\n\nCurrent Status:\n\nPrimary tutorial: {settings['tutorial']}\nSecondary tutorial: {settings['tutorial2']}") 
     elif int(num) == 2:
         await save_group_settings(grp_id, 'tutorial2', tutorial)        
-        return await message.reply_text(f"Successfully set as secondary tutorial.\n\nCurrent Status:\nSecondary tutorial: {settings['tutorial2']}\nPrimary tutorial: {settings['tutorial']}") 
+        return await message.reply_text(f"Successfully set as secondary tutorial.\n\nCurrent Status:\n\nSecondary tutorial: {settings['tutorial2']}\nPrimary tutorial: {settings['tutorial']}") 
     else:
         return await message.reply_text("Give valid number as the first parameter. Eg: 1 or 2")
 
