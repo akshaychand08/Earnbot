@@ -212,11 +212,11 @@ Size : <i>{file_size}</i>"""
 
 Step 2: Add your website and API
 
-Exp: /set_api 1</code> <a href=https://publicearn.com/ref/AkshayChand10>publicearn.com</a> 4b392f8eb6ad711be589ae36 (verify & page)
+Exp: /set_shortlink 1</code> <a href=https://publicearn.com/ref/AkshayChand10>publicearn.com</a> 4b392f8eb6ad711be589ae36 (verify & page)
 
 On Second Verify (only Group) /verify2 True</code> Off Second Verify /verify2 False</code>
 #Note second verification 4 Hours will happen after.
-     /set_verify 2</code> <a href=https://link2paisa.com/ref/AkshayChand10>link2paisa.com</a> 4b392f8eb6ad711be589ae36 (Second Verify)
+     /set_shortlink 2</code> <a href=https://link2paisa.com/ref/AkshayChand10>link2paisa.com</a> 4b392f8eb6ad711be589ae36 (Second Verify)
 
 Step 3: add your how to verify & download video
 
