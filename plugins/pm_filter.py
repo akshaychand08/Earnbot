@@ -863,12 +863,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('sᴘᴇʟʟ ᴄʜᴇᴄᴋ',
-                                         callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["spell_check"] else 'ᴅɪsᴀʙʟᴇ',
-                                         callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
-                ],
-                [
                     InlineKeyboardButton('ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
                     InlineKeyboardButton('15 ᴍɪɴs' if settings["auto_delete"] else 'ᴅɪsᴀʙʟᴇ',
@@ -885,12 +879,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}'),
                     InlineKeyboardButton('sʜᴏʀᴛʟɪɴᴋ' if settings["is_shortlink"] else 'ᴠᴇʀɪꜰʏ',
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}')  
-                ],
-                [
-                    InlineKeyboardButton('ʟɪɴᴋ ᴍᴏᴅ',
-                                         callback_data=f'setgs#verify_short#{settings["verify_short"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ᴅɪsᴀʙʟᴇ' if settings["verify_short"] else 'ᴇɴᴀʙʟᴇ',
-                                         callback_data=f'setgs#verify_short#{settings["verify_short"]}#{str(grp_id)}')            
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -929,12 +917,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('sᴘᴇʟʟ ᴄʜᴇᴄᴋ',
-                                         callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["spell_check"] else 'ᴅɪsᴀʙʟᴇ',
-                                         callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
-                ],
-                [
                     InlineKeyboardButton('ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
                     InlineKeyboardButton('15 ᴍɪɴs' if settings["auto_delete"] else 'ᴅɪsᴀʙʟᴇ',
@@ -951,12 +933,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}'),
                     InlineKeyboardButton('sʜᴏʀᴛʟɪɴᴋ' if settings["is_shortlink"] else 'ᴠᴇʀɪꜰʏ',
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}')  
-                ],
-                [
-                    InlineKeyboardButton('ʟɪɴᴋ ᴍᴏᴅ',
-                                         callback_data=f'setgs#verify_short#{settings["verify_short"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ᴅɪsᴀʙʟᴇ' if settings["verify_short"] else 'ᴇɴᴀʙʟᴇ',
-                                         callback_data=f'setgs#verify_short#{settings["verify_short"]}#{str(grp_id)}')            
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -986,9 +962,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🔱 SUPPORT CHANNEL 🔱', url= 'https://t.me/FoxyBotSupport')
+                    InlineKeyboardButton('🔱 SUPPORT CHANNEL 🔱', url= 'https://t.me/arsOfficial10')
                 ],[
-                    InlineKeyboardButton('FEATURES', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
                     InlineKeyboardButton('💲 Eᴀʀɴ Moɴᴇʏ Wɪᴛʜ Bᴏᴛ 💲', callback_data='ern_mony')
@@ -1384,12 +1359,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('sᴘᴇʟʟ ᴄʜᴇᴄᴋ',
-                                         callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ᴇɴᴀʙʟᴇ' if settings["spell_check"] else 'ᴅɪsᴀʙʟᴇ',
-                                         callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
-                ],
-                [
                     InlineKeyboardButton('ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ',
                                          callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
                     InlineKeyboardButton('15 ᴍɪɴs' if settings["auto_delete"] else 'ᴅɪsᴀʙʟᴇ',
@@ -1406,12 +1375,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}'),
                     InlineKeyboardButton('sʜᴏʀᴛʟɪɴᴋ' if settings["is_shortlink"] else 'ᴠᴇʀɪꜰʏ',
                                          callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{str(grp_id)}')  
-                ],
-                [
-                    InlineKeyboardButton('ʟɪɴᴋ ᴍᴏᴅ',
-                                         callback_data=f'setgs#verify_short#{settings["verify_short"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('ᴅɪsᴀʙʟᴇ' if settings["verify_short"] else 'ᴇɴᴀʙʟᴇ',
-                                         callback_data=f'setgs#verify_short#{settings["verify_short"]}#{str(grp_id)}')                    
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
