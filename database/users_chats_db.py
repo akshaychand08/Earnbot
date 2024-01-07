@@ -29,7 +29,7 @@ class Database:
         return dict(
             id = id,
             title = title, 
-            verify2 = True,
+            verify2 = False,
             chat_status=dict(
                 is_disabled=False,
                 reason="",
@@ -281,7 +281,7 @@ class Database:
     async def use_second_shortener(self, user_id, grp_id): 
         group = await self.get_group_info(int(grp_id))
         status = group.get('verify2')
-        if status==True:        
+        if status==False:        
             user = await self.get_notcopy_user(user_id)
             if not user.get("second_time_verified"):
                 ist_timezone = pytz.timezone('Asia/Kolkata')
@@ -300,7 +300,7 @@ class Database:
                 pastDate = pastDate.astimezone(ist_timezone)
                 current_time = datetime.datetime.now(tz=ist_timezone)
                 time_difference = current_time - pastDate
-                if time_difference > datetime.timedelta(seconds=3600):
+                if time_difference > datetime.timedelta(seconds=14400):
                     pastDate = user["last_verified"].astimezone(ist_timezone)
                     second_time = user["second_time_verified"].astimezone(ist_timezone)
                     return second_time < pastDate
