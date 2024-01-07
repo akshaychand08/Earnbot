@@ -85,9 +85,8 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🔱 SUPPORT CHANNEL 🔱', url= 'https://t.me/FoxyBotSupport')
+                    InlineKeyboardButton('🔱 SUPPORT CHANNEL 🔱', url= 'https://t.me/arsOfficial10')
                 ],[
-                    InlineKeyboardButton('FEATURES', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
                 ],[
                     InlineKeyboardButton('💲 Eᴀʀɴ Moɴᴇʏ Wɪᴛʜ Bᴏᴛ 💲', callback_data='ern_mony')
@@ -416,32 +415,12 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    'Sᴘᴇʟʟ Cʜᴇᴄᴋ',
-                    callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '✔ Oɴ' if settings["spell_check"] else '✘ Oғғ',
-                    callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}',
-                ),
-            ],
-            [
-                InlineKeyboardButton(
                     'Aᴜᴛᴏ-Dᴇʟᴇᴛᴇ',
                     callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
                     '10 Mɪɴs' if settings["auto_delete"] else '✘ Oғғ',
                     callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    'Aᴜᴛᴏ-Fɪʟᴛᴇʀ',
-                    callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '✔ Oɴ' if settings["auto_ffilter"] else '✘ Oғғ',
-                    callback_data=f'setgs#auto_ffilter#{settings["auto_ffilter"]}#{grp_id}',
                 ),
             ],
             [
@@ -453,16 +432,6 @@ async def settings(client, message):
                     'ᴘᴍ ʟɪɴᴋ' if settings["is_shortlink"] else 'ᴠᴇʀɪғʏ',
                     callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{grp_id}',
                 ),
-            ],
-            [
-                InlineKeyboardButton(
-                    'ʟɪɴᴋ ᴍᴏᴅ',
-                    callback_data=f'setgs#verify_short#{settings["verify_short"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '✘ Oғғ' if settings["verify_short"] else '✔ Oɴ',
-                    callback_data=f'setgs#verify_short#{settings["verify_short"]}#{grp_id}',
-                ),		    
             ],
         ]
         btn = [[
