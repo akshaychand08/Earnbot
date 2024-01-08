@@ -21,7 +21,8 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "6573755828:AAH-kr2mWqasV6ULf2QstdIn8xdn3Hn
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://telegra.ph/file/1f782c4fa53ee300e1dfa.jpg')).split()
+#PICS = (environ.get('PICS', 'https://telegra.ph/file/1f782c4fa53ee300e1dfa.jpg')).split()
+PICS = (environ.get('PICS' ,'https://graph.org/file/d2c20ed467fd8a101409f.jpg https://graph.org/file/9fbfa93142640fdaeaf80.jpg https://graph.org/file/e2fba097d69d27061b1e1.jpg https://graph.org/file/fed816c138a42cafc24bb.jpg https://graph.org/file/e6ecfe9f99030aebbbd05.jpg https://graph.org/file/941bae7b0584a16eb0fd2.jpg https://graph.org/file/3f38fa53398771d450c0f.jpg')).split()
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/e9d4fcb45ed02f1ba5147.jpg")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/b8577b96d9fdae40c971b.jpg")
 PICS_1 = (environ.get('PICS_1' ,'https://graph.org/file/d2c20ed467fd8a101409f.jpg https://graph.org/file/9fbfa93142640fdaeaf80.jpg https://graph.org/file/e2fba097d69d27061b1e1.jpg https://graph.org/file/fed816c138a42cafc24bb.jpg https://graph.org/file/e6ecfe9f99030aebbbd05.jpg https://graph.org/file/941bae7b0584a16eb0fd2.jpg https://graph.org/file/3f38fa53398771d450c0f.jpg')).split()
@@ -132,7 +133,7 @@ TUTORIAL_LINK_2 = os.environ.get('TUTORIAL_LINK_2', None)
 #TUTORIAL_LINK_1 = os.environ.get('TUTORIAL_LINK_1', 'https://t.me/howtodownload91/44')
 
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/42d79197597d79418d438.jpg")
-VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1002072344938'))
+VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1001504153078'))
 
 SHORTLINK_URL = environ.get("SHORTLINK_URL", None)
 SHORTLINK_API = environ.get("SHORTLINK_API", None)
