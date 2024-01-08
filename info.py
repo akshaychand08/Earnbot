@@ -49,8 +49,8 @@ PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002072344938'))
 USERNAME = environ.get('USERNAME', 'https://t.me/AkshayChand08')
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://akshaychand:akshaychand@cluster0.3gwaqm0.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "OnlineTube")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://akshaychand:akshaychand@cluster0.9c2trx0.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
