@@ -87,9 +87,8 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('🔱 SUPPORT CHANNEL 🔱', url= 'https://t.me/arsOfficial10')
                 ],[
+		    InlineKeyboardButton('〄 Hᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('ABOUT', callback_data='about')
-                ],[
-                    InlineKeyboardButton('💲 Eᴀʀɴ Moɴᴇʏ Wɪᴛʜ Bᴏᴛ 💲', callback_data='help')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
