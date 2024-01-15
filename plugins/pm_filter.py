@@ -12,7 +12,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import GEN_URL, BIN_CHANNEL, ADMINS, AUTH_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
+from info import GEN_URL, PICS_E, BIN_CHANNEL, ADMINS, AUTH_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
     SINGLE_BUTTON, USERNAME, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, TUTORIAL, REQST_CHANNEL, IS_TUTORIAL, SUPPORT_CHAT, PREMIUM_USER
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
@@ -1043,14 +1043,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "help":
         if query.from_user.id in ADMINS:
-            buttons = [[InlineKeyboardButton('Set Shortner in group', callback_data="ern_mony_v"),], [InlineKeyboardButton('FSUB', callback_data='fsub'),InlineKeyboardButton('CUSTOM CAPTION', callback_data='caption'),], [InlineKeyboardButton('Back', callback_data='start'),]]
+            buttons = [[InlineKeyboardButton('SET SHORTNER IN GROUP', callback_data="ern_mony_v"),], [InlineKeyboardButton('FORCE SUB', callback_data='fsub'),InlineKeyboardButton('CUSTOM CAPTION', callback_data='caption'),], [InlineKeyboardButton('Back', callback_data='start'),]]
         else:          
             buttons = [[InlineKeyboardButton('Set Shortner in group', callback_data="ern_mony_v"),], [InlineKeyboardButton('FSUB', callback_data='fsub'),InlineKeyboardButton('CUSTOM CAPTION', callback_data='caption'),], [InlineKeyboardButton('EXTRA MODS', callback_data='extra'),],[InlineKeyboardButton('Back', callback_data='start'),]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            InputMediaPhoto(random.choice(PICS_E))
         )
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -1083,7 +1083,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            InputMediaPhoto(random.choice(PICS_E))
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1100,7 +1100,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            InputMediaPhoto(random.choice(PICS_E))
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1111,13 +1111,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "caption":
         buttons = [[
-            InlineKeyboardButton('SUPPORT', url=USERNAME),
             InlineKeyboardButton('Back', callback_data='help')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            InputMediaPhoto(random.choice(PICS_E))
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1127,14 +1126,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "fsub":
         buttons = [[
-            InlineKeyboardButton('SUPPORT', url=USERNAME),
             InlineKeyboardButton('Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            InputMediaPhoto(random.choice(PICS_E))
         )
         await query.message.edit_text(
             text=script.FSUB_TXT,
@@ -1247,7 +1245,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('Aᴅᴍɪɴ', callback_data='admin')
         ]]
         await client.edit_message_media(
@@ -1295,7 +1293,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('⟲ Rᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         await client.edit_message_media(
