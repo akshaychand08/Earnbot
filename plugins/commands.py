@@ -64,7 +64,7 @@ async def start(client, message):
                     InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇs', url='https://t.me/arsOfficial10'),
                     InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url='https://t.me/iPapdiscussion')
                   ],[
-                    InlineKeyboardButton('ʜᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help")
+                    InlineKeyboardButton('💸 EARN MONEY 💵', url=f"https://t.me/{temp.U_NAME}?start=help")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         kd = await message.reply_photo(
@@ -83,7 +83,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('➕ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('💸 EARN MONEY 💵', callback_data='help')
                 ],[
