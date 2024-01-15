@@ -8,9 +8,27 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>"""
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
     ABOUT_TXT = """<b>⚜️ MY NAME : {}</b>
-<b>⚜️ MY OWNER : <a href=https://t.me/AkshayChand08>Akshay Chand</a></b>
-               : <a href=https://t.me/Rutuja78>Rutuja</a></b>
-<b>⚜️ UPDATES : <a href=https://t.me/arsOfficial10>ARS Official</a></b>"""
+<b> Step 1: make admin this <a href=https://t.me/{}>{}</a> bot your group  
+
+Step 2: Add your website and API
+
+Exp: /set_shortlink 1</code> <a href=https://publicearn.com/ref/AkshayChand10>publicearn.com</a> 4b392f8eb6ad711be589ae36 (verify & page)
+
+On Second Verify (only Group) /verify2 True</code>
+Off Second Verify /verify2 False</code>
+
+#Note second verification 4 Hours will happen after.
+/set_shortlink 2</code> <a href=https://link2paisa.com/ref/AkshayChand10>link2paisa.com</a> 4b392f8eb6ad711be589ae36 (Second Verify)
+
+Step 3: add your how to verify & download video
+
+    👇 how to add 👇
+
+Exp:  /set_tutorial 1 video link</code> (verify & page)
+       /set_tutorial 2 video link</code> (Second Verify)
+      
+Step 4: Check Your All Details 
+        command /details (Work Only Group)</b>"""
 
     MANUELFILTER_TXT = """Hii"""
 
