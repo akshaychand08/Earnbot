@@ -308,39 +308,40 @@ Size : <i>{file_size}</i>"""
     ERN_MONY_V = """
 <b>🀄 ʜᴏᴡ ᴛᴏ sᴇᴛ ᴠᴇʀɪꜰʏ ᴍᴏᴅᴇ 🀄
 
-ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋ ᴏɴ ᴠᴇʀɪꜰʏ ᴍᴏᴅᴇ
-
-❗1 ʏᴏᴜ ʜᴀᴠᴇ ᴀᴛʟᴇᴀsᴛ 𝟷𝟶𝟶 ᴍᴇᴍʙᴇʀs ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+❗1 1. Aᴅᴅ ᴛʜᴇ ʙᴏᴛ ᴀs ᴀᴅᴍɪɴ ᴏɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
+2. Usᴇ /connect ᴀɴᴅ ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴛʜᴇ ʙᴏᴛ.
+3. Usᴇ /settings ᴏɴ ʙᴏᴛ's PM ᴀɴᴅ ᴛᴜʀɴ ᴏɴ off Verify Mode or Page mode ᴏɴ ᴛʜᴇ sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ.
 
 ❗2 ᴍᴀᴋᴇ ᴛʜɪs <a href=https://t.me/{}>{}</a> ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
 
-❗3 ᴄʀᴇᴀᴛᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ ᴀɴʏ sʜᴏʀᴛɴᴇʀ ʟɪᴋᴇ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴜsᴇ ᴛʜɪs ʙᴇsᴛ sʜᴏʀᴛɴᴇʀ onepagelink.in.
+❗3 ᴄʀᴇᴀᴛᴇ ᴀᴄᴄᴏᴜɴᴛ ᴏɴ ᴀɴʏ sʜᴏʀᴛɴᴇʀ ʟɪᴋᴇ ʏᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴜsᴇ ᴛʜɪs ʙᴇsᴛ sʜᴏʀᴛɴᴇʀ <a href=https://publicearn.com/ref/AkshayChand10>publicearn.com</a>.
 
 ❗4 ᴛʜᴇɴ sᴇᴛ ʏᴏᴜʀ sʜᴏʀᴛɴᴇʀ ᴅᴇᴛᴀɪʟs ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ
 
 ❗5 sᴇᴛ ᴠᴇʀɪꜰʏ 𝟷 sʜᴏʀᴛɴᴇʀ ᴇxᴀᴍᴘʟᴇ👇🏼
 
-/set_shortlink 1 shortlink.in 8dbe××××
+<code>/set_shortlink 1</code> <a href=https://publicearn.com/ref/AkshayChand10>publicearn.com</a> 8dbe××××
 
-❗6 sᴇᴛ ᴠᴇʀɪꜰʏ 𝟸 sʜᴏʀᴛɴᴇʀ ᴇxᴀᴍᴘʟᴇ👇🏼
+❗6 sᴇᴛ ᴠᴇʀɪꜰʏ 𝟸 sʜᴏʀᴛɴᴇʀ (by default off)
 
-/set_shortlink 2  shortlink.in 8bg1×××
+On Verify 2 Shortner <code>/verify2 True</code> command
+off Verify 2 Shortner <code>/verify2 False</code> command 
+
+ᴇxᴀᴍᴘʟᴇ👇🏼
+
+<code>/set_shortlink 2</code> <a href=https://link2paisa.com/ref/AkshayChand10>link2paisa.com</a> 8bg1×××
 
 ❗7 ᴛʜᴇɴ sᴇᴛ ʏᴏᴜʀ ᴛᴜᴛᴏʀɪᴀʟ ᴅᴇᴛᴀɪʟs ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ
 
 ❗8 ꜰɪʀsᴛ ᴠᴇʀɪꜰʏ ᴛᴜᴛᴏʀɪᴀʟ ᴇxᴀᴍᴘʟᴇ👇🏼
 
-/set_tutorial 1 https://t.me/link
+<code>/set_tutorial 1</code> https://t.me/link
 
 ❗9 sᴇᴄᴏɴᴅ ᴠᴇʀɪꜰʏ ᴛᴜᴛᴏʀɪᴀʟ ᴇxᴀᴍᴘʟᴇ👇🏼
 
-/set_tutorial 2 https://t.me/link
+<code>/set_tutorial 2</code> https://t.me/link
 
-❗10 ᴀᴅᴅ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ʙʏ ᴛʜɪs ꜰᴏʀᴍᴀᴛ & ᴍᴀᴋᴇ sᴜʀᴇ ʙᴏᴛ ɪs ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ᴇxᴀᴍᴘʟᴇ👇🏼
-
-/set_log_channel -100***
-
-❗12 ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀʟʟ ᴅᴇᴛᴀɪʟs ʙʏ /details ᴄᴏᴍᴍᴀɴᴅ
+❗11 ʏᴏᴜ ᴄᴀɴ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴀʟʟ ᴅᴇᴛᴀɪʟs ʙʏ /details ᴄᴏᴍᴍᴀɴᴅ
 
 💯 ɴᴏᴛᴇ - ᴛʜɪs ʙᴏᴛ ɪs ꜰʀᴇᴇ ᴛᴏ ᴀʟʟ, ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ʙᴏᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘs ᴀɴᴅ ᴇᴀʀɴ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏɴᴇʏ.</b>"""
 
