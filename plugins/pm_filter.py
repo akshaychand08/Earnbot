@@ -982,7 +982,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "ern_mony_v":
         buttons = [[
             InlineKeyboardButton('SUPPORT CHANNEL', url=USERNAME),
-            InlineKeyboardButton('Back', callback_data='ern_mony')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -991,7 +990,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ERN_MONY_V.format(temp.B_NAME, temp.U_NAME),
+            text=script.ERN_MONY_V,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )       
