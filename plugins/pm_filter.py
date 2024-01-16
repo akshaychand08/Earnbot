@@ -1474,7 +1474,7 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="𝐍𝐎 𝐌𝐎𝐑𝐄 𝐏𝐀𝐆𝐄𝐒 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄",callback_data="pages")]
         ) 
 
-    cap = f"<b>🍿 Hᴇʏ {message.from_user.mention},\n♨️ ʜᴇʀᴇ ɪ ꜰᴏᴜɴᴅ ꜰᴏʀ ʏᴏᴜʀ sᴇᴀʀᴄʜ {search}...</b>"
+    cap = = f"🎪 ᴛɪᴛɪʟᴇ : {search}\n\n┏⁉️ ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n┣🔆 ᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href='https://t.me/{temp.U_NAME}'>ɪ ᴘᴀᴘᴄᴏʀɴ ᴇᴀʀɴ</a>\n┣♻️ ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/+VSL-2W-eQFJlNGJl'>𝗮𝗿𝘀 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹</a>\n┗⏱️ ʀᴇsᴜʟᴛ sʜᴏᴡ ɪɴ : 20 ᴍɪɴᴜᴛᴇꜱ\n\n⚠️ ᴀꜰᴛᴇʀ 1 ʜᴏᴜʀ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ 🗑️\n\n<b>❇️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : {message.chat.title}</b>"
     CAP[key] = cap
     if settings['auto_delete']:
         k = await message.reply_text(cap + text_link, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
