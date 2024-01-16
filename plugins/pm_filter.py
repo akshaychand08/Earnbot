@@ -1019,7 +1019,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "help":
         if query.from_user.id in ADMINS:
-            buttons = [[InlineKeyboardButton('SET SHORTNER IN GROUP', callback_data="ern_mony_v"),], [InlineKeyboardButton('FORCE SUB', callback_data='fsub'),InlineKeyboardButton('CUSTOM CAPTION', callback_data='caption'),], [InlineKeyboardButton('Back', callback_data='start'),]]
+            buttons = [[InlineKeyboardButton('SET SHORTNER IN GROUP', callback_data="ern_mony_v"),], [InlineKeyboardButton('FORCE SUB', callback_data='fsub'),InlineKeyboardButton('CUSTOM CAPTION', callback_data='caption'),], [InlineKeyboardButton('CONNECTIONS', callback_data="coct"),], [InlineKeyboardButton('Back', callback_data='start'),]]
         else:          
             buttons = [[InlineKeyboardButton('Set Shortner in group', callback_data="ern_mony_v"),], [InlineKeyboardButton('FSUB', callback_data='fsub'),InlineKeyboardButton('CUSTOM CAPTION', callback_data='caption'),], [InlineKeyboardButton('EXTRA MODS', callback_data='extra'),],[InlineKeyboardButton('Back', callback_data='start'),]]
         reply_markup = InlineKeyboardMarkup(buttons)
