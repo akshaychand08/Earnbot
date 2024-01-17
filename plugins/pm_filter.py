@@ -1053,6 +1053,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )               
     elif query.data == "ern_mony_v":
         buttons = [[
+            InlineKeyboardButton('How To Set Shortner video', url='https://t.me/HoW_ToOpEn/43')
+            ],[
             InlineKeyboardButton('SUPPORT', url=USERNAME),
             InlineKeyboardButton('Back', callback_data='help')
         ]]
