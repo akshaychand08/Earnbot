@@ -133,7 +133,7 @@ TUTORIAL_LINK_2 = os.environ.get('TUTORIAL_LINK_2', None)
 #TUTORIAL_LINK_1 = os.environ.get('TUTORIAL_LINK_1', 'https://t.me/howtodownload91/44')
 
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/42d79197597d79418d438.jpg")
-VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1001504153078'))
+VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1001991087487'))
 
 #SHORTLINK_URL = environ.get("SHORTLINK_URL", None)
 #SHORTLINK_API = environ.get("SHORTLINK_API", None)
