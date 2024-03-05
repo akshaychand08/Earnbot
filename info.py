@@ -55,8 +55,8 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-VERIFY = bool(environ.get('VERIFY', True))
-IS_SHORTLINK = is_enabled(environ.get("IS_SHORTLINK", "False"), True)
+VERIFY = bool(environ.get('VERIFY', False))
+IS_SHORTLINK = is_enabled(environ.get("IS_SHORTLINK", "True"), True)
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'earn2me.com')
 SHORTLINK_API = environ.get('SHORTLINK_API', '9c65da040c06369120fe6487c3f72406c59047b7')
 #SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'mdiskshortner.link')
