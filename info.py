@@ -15,7 +15,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '22301351'))
 API_HASH = environ.get('API_HASH', '3035f2bbd92a9c5174d174d92b52b25b')
-BOT_TOKEN = environ.get('BOT_TOKEN', "6573755828:AAH-kr2mWqasV6ULf2QstdIn8xdn3Hntwrw")
+BOT_TOKEN = environ.get('BOT_TOKEN', "6573755828:AAHgttwLkaAls8RM0Xpss4FvNo-GSdHBgNM")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -57,8 +57,8 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 # Others
 VERIFY = bool(environ.get('VERIFY', True))
 IS_SHORTLINK = is_enabled(environ.get("IS_SHORTLINK", "False"), True)
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'earn2me.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', '9c65da040c06369120fe6487c3f72406c59047b7')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'publicearn.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '570bcebdb0b2b6080fc5b71f2e6cd1f68bf5494a')
 #SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'mdiskshortner.link')
 #SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', 'fc6297ad0ad340ec66c75ce9157e056176bd7a81')
 SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', None)
@@ -115,8 +115,8 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 #verify 
 
 #bot owner 
-SHORTENER_API = environ.get("SHORTENER_API", "9c65da040c06369120fe6487c3f72406c59047b7")
-SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "earn2me.com")
+SHORTENER_API = environ.get("SHORTENER_API", "570bcebdb0b2b6080fc5b71f2e6cd1f68bf5494a")
+SHORTENER_WEBSITE = environ.get("SHORTENER_WEBSITE", "publicearn.com")
 #SHORTENER_API2 = environ.get("SHORTENER_API2", "6ee7840bdaf0103a11214c62c8b0a5d05fe347c3")
 #SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "tnshort.net")
 SHORTENER_API2 = environ.get("SHORTENER_API2", None)
@@ -140,8 +140,8 @@ VERIFY_LOG = int(environ.get('VERIFY_LOG', '-1001991087487'))
 SHORTLINK_API2 = environ.get("SHORTLINK_API2", None)
 SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", None)
 
-SHORTLINK_API = environ.get("SHORTLINK_API", "31527d04f7d6957c11cba5b6c72e5a3f1101803b")
-SHORTLINK_URL = environ.get("SHORTLINK_URL", "link2paisa.com")
+SHORTLINK_API = environ.get("SHORTLINK_API", "570bcebdb0b2b6080fc5b71f2e6cd1f68bf5494a")
+SHORTLINK_URL = environ.get("SHORTLINK_URL", "publicearn.com")
 #SHORTLINK_API2 = environ.get("SHORTLINK_API2", "9c65da040c06369120fe6487c3f72406c59047b7")
 #SHORTLINK_URL2 = environ.get("SHORTLINK_URL2", "earn2me.com")
 
